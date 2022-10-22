@@ -1,0 +1,179 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+# *buntu section     
+  - name: install curl and wget (gets stuffs)
+    apt:
+      name:
+        - curl
+        - wget  
+      state: latest
+      update_cache: yes  
+    when:
+      ansible_distribution == "Ubuntu"
+
+  - name: feh (shows pics)
+    apt:
+      name: feh
+      state: latest
+      update_cache: yes  
+    when:
+      ansible_distribution == "Ubuntu"
+
+  - name: flatpak snap docker (apps not distro specific)
+    apt:
+      name: 
+        - flatpak
+        - snapd
+        - docker 
+      state: latest
+      update_cache: yes    
+    when:
+      ansible_distribution == "Ubuntu"
+
+  - name: git (build stuff)
+    apt:
+      name: git
+      state: latest
+      update_cache: yes  
+    when:
+      ansible_distribution == "Ubuntu"
+
+  - name: htop iotop inxi ntop (prettier monitoring)
+    apt:
+      name: 
+        - htop
+        - iotop  
+        - inxi
+        - ntop  
+      state: latest
+      update_cache: yes    
+    when:
+      ansible_distribution == "Ubuntu"
+      
+  - name: nfs-common (access nfs shares)
+    apt:
+      name: nfs-common
+      state: latest
+      update_cache: yes  
+    when:
+      ansible_distribution == "Ubuntu"
+
+  - name: openssh-server (remote access)
+    apt:
+      name: openssh-server
+      state: latest
+      update_cache: yes  
+    when:
+      ansible_distribution == "Ubuntu"
+
+  - name: tmux (teminal multiplexer so I can detach, mostly)  
+    apt:
+      name: tmux
+      state: latest
+      update_cache: yes  
+    when:
+      ansible_distribution == "Ubuntu"
+   
+  - name: vim (to edit text)
+    apt:
+      name: vim
+      state: latest
+      update_cache: yes  
+    when:
+      ansible_distribution == "Ubuntu"
+   
+  - name: zsh (shell with some niceties)
+    apt:
+      name: zsh
+      state: latest
+      update_cache: yes  
+    when:
+      ansible_distribution == "Ubuntu"
+
+#Fedora section 
+  - name: install wget curl (begaues we need to get stuff sometimes)
+    dnf:
+      name: 
+        - wget
+        - curl  
+      state: latest
+      update_cache: yes    
+    when:
+      ansible_distribution == "Fedora"
+
+  - name: install openssh-server (so others can connect)
+    dnf:
+      name: openssh-server
+      state: latest
+      update_cache: yes  
+    when:
+      ansible_distribution == "Fedora"
+
+  - name: install vim (because it's what I'm used to writing in)
+    dnf:
+      name: vim
+      state: latest
+      update_cache: yes  
+    when:
+      ansible_distribution == "Fedora"
+
+  - name: install rsync (to move data between locations)
+    dnf:
+      name: rsync
+      state: latest
+      update_cache: yes  
+    when:
+      ansible_distribution == "Fedora"
+
+  - name: install git (because git is useful)
+    dnf:
+      name: git
+      state: latest
+      update_cache: yes  
+    when:
+      ansible_distribution == "Fedora"
+
+  - name: install docker flatpak snapd for pakaged stuff
+    dnf:
+      name: 
+        - docker
+        - snapd 
+        - flatpak
+      state: latest
+      update_cache: yes   
+    when:
+      ansible_distribution == "Fedora"
+
+  - name: install tmux (for terminal multiplexing)
+    dnf:
+      name: tmux
+      state: latest
+      update_cache: yes  
+    when:
+      ansible_distribution == "Fedora"
+
+  - name: install iotop inxi htop ntop (to be able to see io pretty-like)
+    dnf:
+      name: 
+        - iotop
+        - htop 
+        - inxi  
+        - ntop
+      state: latest
+      update_cache: yes   
+    when:
+      ansible_distribution == "Fedora"
+
+  - name: install icedtea-netx (for connectwise/screenconnect)
+    dnf:
+      name: icedtea-netx
+      state: latest
+      update_cache: yes 
+    when:
+      ansible_distribution == "Fedora"
+ 
+
