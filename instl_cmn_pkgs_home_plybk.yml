@@ -1,0 +1,80 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install curl and wget (gets stuffs)
+    package:
+      name:
+        - "{{ curl_dist_pkg }}"
+        - "{{ wget_dist_pkg }}"  
+      state: latest
+      update_cache: yes  
+
+  - name: feh (shows pics)
+    package:
+      name:
+        - "{{ feh_dist_pkg}}"
+      state: latest
+      update_cache: yes  
+
+  - name: flatpak snap docker (apps not dist specific)
+    package:
+      name: 
+        - "{{ flatpak_dist_pkg }}" 
+        - "{{ snapd_dist_pkg }}"
+        - "{{ docker_dist_pkg }}"    
+      state: latest
+      update_cache: yes    
+
+  - name: git (build stuff)
+    package:
+      name: 
+         - "{{ git_dist_pkg }}"
+      state: latest
+      update_cache: yes  
+
+  - name: htop iotop inxi (prettier monitoring)
+    package:
+      name: 
+        - "{{ htop_dist_pkg }}" 
+        - "{{ iotop_dist_pkg }}"  
+        - "{{ inxi_dist_pkg }}"
+      state: latest
+      update_cache: yes    
+      
+  - name: nfscommon (access nfs shares)
+    package:
+      name:
+        - "{{ nfscommon_dist_pkg }}" 
+      state: latest
+      update_cache: yes  
+
+  - name: openssh-server (remote access)
+    package:
+      name:
+        - "{{ opensshserver_dist_pkg }}" 
+      state: latest
+      update_cache: yes  
+
+  - name: tmux (teminal multiplexer so I can detach, mostly)  
+    package:
+      name: 
+        - "{{ tmux_dist_pkg }}"
+      state: latest
+      update_cache: yes  
+   
+  - name: vim (to edit text)
+    package:
+      name: 
+        - "{{ vim_dist_pkg }}"
+      state: latest
+      update_cache: yes  
+   
+  - name: zsh (shell with some niceties)
+    package:
+      name: 
+        - "{{ zsh_dist_pkg }}"
+      state: latest
+      update_cache: yes  
