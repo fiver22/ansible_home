@@ -7,7 +7,6 @@
 # *buntu section     
   - name: install curl and wget (gets stuffs)
     package:
-      ansible_distribution == "Fedora"
       name:
         - "{{ curl_distro_pkg }}"
         - "{{ wget_distro_pkg }}"  
