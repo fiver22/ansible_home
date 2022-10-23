@@ -140,7 +140,7 @@
   - name: install docker flatpak snapd for pakaged stuff
     dnf:
       name: 
-        - docker
+        - docker-ce
         - snapd 
         - flatpak
       state: latest
