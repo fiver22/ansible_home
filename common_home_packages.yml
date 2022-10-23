@@ -42,13 +42,12 @@
     when:
       ansible_distribution == "Ubuntu"
 
-  - name: htop iotop inxi ntop (prettier monitoring)
+  - name: htop iotop inxi (prettier monitoring)
     apt:
       name: 
         - htop
         - iotop  
         - inxi
-        - ntop  
       state: latest
       update_cache: yes    
     when:
@@ -156,13 +155,12 @@
     when:
       ansible_distribution == "Fedora"
 
-  - name: install iotop inxi htop ntop (to be able to see io pretty-like)
+  - name: install iotop inxi htop (to be able to see io pretty-like)
     dnf:
       name: 
         - iotop
         - htop 
         - inxi  
-        - ntop
       state: latest
       update_cache: yes   
     when:
