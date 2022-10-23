@@ -4,7 +4,6 @@
   become: true
   tasks:
 
-# *buntu section     
   - name: install curl and wget (gets stuffs)
     package:
       name:
@@ -16,7 +15,7 @@
   - name: feh (shows pics)
     package:
       name:
-        - "{{ feh_disto_pkg}}"
+        - "{{ feh_dist_pkg}}"
       state: latest
       update_cache: yes  
 
@@ -24,7 +23,7 @@
     package:
       name: 
         - "{{ flatpak_dist_pkg }}" 
-        - "{{ snap_dist_pkg }}"
+        - "{{ snapd_dist_pkg }}"
         - "{{ docker_dist_pkg }}"    
       state: latest
       update_cache: yes    
@@ -32,7 +31,7 @@
   - name: git (build stuff)
     package:
       name: 
-  - "{{ git_dist_pkg }}"
+         - "{{ git_dist_pkg }}"
       state: latest
       update_cache: yes  
 
@@ -69,13 +68,13 @@
   - name: vim (to edit text)
     package:
       name: 
-  - "{{ vim_dist_pkg }}"
+        - "{{ vim_dist_pkg }}"
       state: latest
       update_cache: yes  
    
   - name: zsh (shell with some niceties)
     package:
       name: 
-  - "{{ zsh_dist_pkg }}"
+        - "{{ zsh_dist_pkg }}"
       state: latest
       update_cache: yes  

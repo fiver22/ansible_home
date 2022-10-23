@@ -1,6 +1,6 @@
 curl_dist_pkg: curl 
 default-jre_dist_pkg: default-jre 
-docker_dist_pkg: docker
+docker_dist_pkg: docker-ce
 feh_dist_pkg: feh
 flatpak_dist_pkg: flatpak 
 htop_dist_pkg: htop
