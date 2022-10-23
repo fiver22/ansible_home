@@ -14,153 +14,68 @@
       update_cache: yes  
 
   - name: feh (shows pics)
-    apt:
+    package:
       name:
         - "{{ feh_disto_pkg}}"
       state: latest
       update_cache: yes  
-    when:
 
   - name: flatpak snap docker (apps not dist specific)
-    apt:
+    package:
       name: 
-        - flatpak
-        - snapd
-        - docker 
+        - "{{ flatpak_dist_pkg }}" 
+        - "{{ snap_dist_pkg }}"
+        - "{{ docker_dist_pkg }}"    
       state: latest
       update_cache: yes    
-    when:
-      ansible_distribution == "Ubuntu"
 
   - name: git (build stuff)
-    apt:
-      name: git
+    package:
+      name: 
+  - "{{ git_dist_pkg }}"
       state: latest
       update_cache: yes  
-    when:
-      ansible_distribution == "Ubuntu"
 
   - name: htop iotop inxi (prettier monitoring)
-    apt:
+    package:
       name: 
-        - htop
-        - iotop  
-        - inxi
+        - "{{ htop_dist_pkg }}" 
+        - "{{ iotop_dist_pkg }}"  
+        - "{{ inxi_dist_pkg }}"
       state: latest
       update_cache: yes    
-    when:
-      ansible_distribution == "Ubuntu"
       
   - name: nfs-common (access nfs shares)
-    apt:
-      name: nfs-common
+    package:
+      name:
+        - "{{ nfs-common_dist_pkg }}" 
       state: latest
       update_cache: yes  
-    when:
-      ansible_distribution == "Ubuntu"
 
   - name: openssh-server (remote access)
-    apt:
-      name: openssh-server
+    package:
+      name:
+        - "{{ openssh-server_dist_pkg }}" 
       state: latest
       update_cache: yes  
-    when:
-      ansible_distribution == "Ubuntu"
 
   - name: tmux (teminal multiplexer so I can detach, mostly)  
-    apt:
-      name: tmux
+    package:
+      name: 
+        - "{{ tmux_dist_pkg }}"
       state: latest
       update_cache: yes  
-    when:
-      ansible_distribution == "Ubuntu"
    
   - name: vim (to edit text)
-    apt:
-      name: vim
+    package:
+      name: 
+  - "{{ vim_dist_pkg }}"
       state: latest
       update_cache: yes  
-    when:
-      ansible_distribution == "Ubuntu"
    
   - name: zsh (shell with some niceties)
-    apt:
-      name: zsh
-      state: latest
-      update_cache: yes  
-    when:
-      ansible_distribution == "Ubuntu"
-
-#Fedora section 
-
-  - name: install openssh-server (so others can connect)
-    dnf:
-      name: openssh-server
-      state: latest
-      update_cache: yes  
-    when:
-      ansible_distribution == "Fedora"
-
-  - name: install vim (because it's what I'm used to writing in)
-    dnf:
-      name: vim
-      state: latest
-      update_cache: yes  
-    when:
-      ansible_distribution == "Fedora"
-
-  - name: install rsync (to move data between locations)
-    dnf:
-      name: rsync
-      state: latest
-      update_cache: yes  
-    when:
-      ansible_distribution == "Fedora"
-
-  - name: install git (because git is useful)
-    dnf:
-      name: git
-      state: latest
-      update_cache: yes  
-    when:
-      ansible_distribution == "Fedora"
-
-  - name: install docker flatpak snapd for pakaged stuff
-    dnf:
+    package:
       name: 
-        - docker-ce
-        - snapd 
-        - flatpak
-      state: latest
-      update_cache: yes   
-    when:
-      ansible_distribution == "Fedora"
-
-  - name: install tmux (for terminal multiplexing)
-    dnf:
-      name: tmux
+  - "{{ zsh_dist_pkg }}"
       state: latest
       update_cache: yes  
-    when:
-      ansible_distribution == "Fedora"
-
-  - name: install iotop inxi htop (to be able to see io pretty-like)
-    dnf:
-      name: 
-        - iotop
-        - htop 
-        - inxi  
-      state: latest
-      update_cache: yes   
-    when:
-      ansible_distribution == "Fedora"
-
-  - name: install icedtea-netx (for connectwise/screenconnect)
-    dnf:
-      name: icedtea-netx
-      state: latest
-      update_cache: yes 
-    when:
-      ansible_distribution == "Fedora"
- 
-
