@@ -8,20 +8,20 @@
   - name: install curl and wget (gets stuffs)
     package:
       name:
-        - "{{ curl_distro_pkg }}"
-        - "{{ wget_distro_pkg }}"  
+        - "{{ curl_dist_pkg }}"
+        - "{{ wget_dist_pkg }}"  
       state: latest
       update_cache: yes  
 
   - name: feh (shows pics)
     apt:
-      name: feh
+      name:
+        - "{{ feh_disto_pkg}}"
       state: latest
       update_cache: yes  
     when:
-      ansible_distribution == "Ubuntu"
 
-  - name: flatpak snap docker (apps not distro specific)
+  - name: flatpak snap docker (apps not dist specific)
     apt:
       name: 
         - flatpak
