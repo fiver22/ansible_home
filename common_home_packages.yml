@@ -44,17 +44,17 @@
       state: latest
       update_cache: yes    
       
-  - name: nfs-common (access nfs shares)
+  - name: nfscommon (access nfs shares)
     package:
       name:
-        - "{{ nfs-common_dist_pkg }}" 
+        - "{{ nfscommon_dist_pkg }}" 
       state: latest
       update_cache: yes  
 
   - name: openssh-server (remote access)
     package:
       name:
-        - "{{ openssh-server_dist_pkg }}" 
+        - "{{ opensshserver_dist_pkg }}" 
       state: latest
       update_cache: yes  
 

@@ -1,5 +1,5 @@
 curl_dist_pkg: curl 
-default-jre_dist_pkg: default-jre 
+defaultjre_dist_pkg: default-jre 
 docker_dist_pkg: docker-ce
 feh_dist_pkg: feh
 flatpak_dist_pkg: flatpak 
@@ -9,11 +9,11 @@ icedtea_dist_pkg: icedtea-netx
 inxi_dist_pkg: inxi
 iotop_dist_pkg: iotop  
 iperf_dist_pkg: iperf
-nfs-common_dist_pkg: nfs-common
-openssh-server_dist_pkg: openssh-server
+nfscommon_dist_pkg: nfs-utils
+opensshserver_dist_pkg: openssh-server
 samba_dist_pkg: samba
 snapd_dist_pkg: snapd
-stress-ng_dist_pkg: stress-ng
+stressng_dist_pkg: stress-ng
 tmux_dist_pkg: tmux
 vim_dist_pkg: vim
 wget_dist_pkg: wget
