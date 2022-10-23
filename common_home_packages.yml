@@ -8,12 +8,10 @@
   - name: install curl and wget (gets stuffs)
     apt:
       name:
-        - curl
-        - wget  
+        - "{{ curl_distro_pkg }}"
+        - "{{ wget_distro_pkg }}"  
       state: latest
       update_cache: yes  
-    when:
-      ansible_distribution == "Ubuntu"
 
   - name: feh (shows pics)
     apt:
@@ -94,15 +92,6 @@
       ansible_distribution == "Ubuntu"
 
 #Fedora section 
-  - name: install wget curl (begaues we need to get stuff sometimes)
-    dnf:
-      name: 
-        - wget
-        - curl  
-      state: latest
-      update_cache: yes    
-    when:
-      ansible_distribution == "Fedora"
 
   - name: install openssh-server (so others can connect)
     dnf:

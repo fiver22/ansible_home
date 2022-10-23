@@ -1,4 +1,4 @@
-mrpi
-mg
-ms
+mrpi curl_distro_pkg=curl wget_distro_pkg=wget
+mg curl_distro_pkg=curl wget_distro_pkg=wget
+ms curl_distro_pkg=curl wget_distro_pkg=wget
 
