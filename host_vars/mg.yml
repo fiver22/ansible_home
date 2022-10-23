@@ -7,6 +7,7 @@ htop_dist_pkg: htop
 git_dist_pkg: git
 icedtea_dist_pkg: icedtea-netx
 inxi_dist_pkg: inxi
+iotop_dist_pkg: iotop  
 iperf_dist_pkg: iperf
 nfs-common_dist_pkg: nfs-common
 openssh-server_dist_pkg: openssh-server
