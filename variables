@@ -8,7 +8,11 @@
 "{{ icedtea_dist_pkg }}"
 "{{ inxi_dist_pkg }}"
 "{{ iperf_dist_pkg }}"
+<<<<<<< HEAD
 "{{ nfscommon_dist_pkg }}"
+=======
+"{{ nfs-common_dist_pkg }}"
+>>>>>>> cc8c9cb (mod variables removing dashes)
 "{{ opensshserver_dist_pkg }}"
 "{{ samba_dist_pkg }}"
 "{{ snapd_dist_pkg }}"
